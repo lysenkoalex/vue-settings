@@ -37,13 +37,20 @@
           <option>Uk</option>
         </select>
       </div>
-      <button type="submit" class="btn-primary">Save</button>
+      <button type="button" class="btn-primary" @click="save">Save</button>
     </form>
   </div>
 </template>
 
 <script setup lang="ts">
+import { useNotifications } from '@/composables/useNotifications';
 import { useSettings } from '@/composables/useSettings';
 
 const { general } = useSettings();
+
+const { addNotification } = useNotifications()
+
+const save = () => {
+  addNotification('lala')
+}
 </script>
