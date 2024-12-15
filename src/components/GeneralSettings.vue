@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2 class="text-2xl mb-4">General</h2>
-    <form class="space-y-4 mx-auto">
+    <form class="space-y-4 mx-auto" @submit.prevent="save">
       <div>
         <label>Username</label>
         <input type="text" v-model="general.username" />
@@ -37,7 +37,7 @@
           <option>Uk</option>
         </select>
       </div>
-      <button type="button" class="btn-primary" @click="save">Save</button>
+      <button type="submit" class="btn-primary">Save</button>
     </form>
   </div>
 </template>
@@ -51,6 +51,6 @@ const { general } = useSettings();
 const { addNotification } = useNotifications()
 
 const save = () => {
-  addNotification('lala')
+  addNotification('General settings were saaved successfully')
 }
 </script>
